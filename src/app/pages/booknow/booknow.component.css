@@ -1,0 +1,263 @@
+html, body {
+  height: 100%; /* Ensure full height for centering */
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: #35424a;
+  margin-bottom: 20px;
+  text-align: center; /* Center heading */
+}
+
+form {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  max-width: 400px; /* Set a maximum width for the form */
+  width: 100%; /* Make it responsive */
+  margin-left: 30%;
+}
+
+form:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  margin: 10px 0 5px;
+  font-weight: bold;
+  display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+select {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+button {
+  padding: 10px;
+  background: #35424a;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+  width: 100%; /* Full width button */
+}
+
+button:hover {
+  background: #2c3e50;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.health-issues {
+  margin: 10px 0;
+}
+
+.health-issues label {
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+.payment-methods {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.payment-methods button {
+  margin: 0;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px; /* Rounded corners */
+}
+
+.payment-methods button.active {
+  background-color: #0056b3;
+}
+
+.payment-methods button:hover {
+  background-color: #0056b3;
+}
+
+.divider {
+  margin: 0 10px; /* Adjust space around the slash */
+  font-weight: bold; /* Make the slash bold */
+  color: #333; /* Color of the slash */
+}
+
+h3 {
+  margin-top: 20px;
+}
+
+.button-56 {
+  align-items: center;
+  background-color: #fee6e3;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-56:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.button-56:hover:after {
+  transform: translate(0, 0);
+}
+
+.button-56:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+
+.button-56:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  .button-56 {
+      padding: 0 40px;
+  }
+}
+
+.payment-details, .otp-form {
+  margin: 20px 0;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+.timer {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.loader {
+  text-align: center;
+  font-size: 16px;
+  color: #007bff; /* Loader color */
+  margin-top: 10px;
+}
+
+.loading {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.success-message {
+  text-align: center;
+  margin: 20px 0;
+  color: green;
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  height: 200px; /* Adjust height as needed */
+}
+
+.spinner {
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 40px; /* Spinner width */
+  height: 40px; /* Spinner height */
+  animation: spin 1s linear infinite; /* Animation */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

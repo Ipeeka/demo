@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Search Page with Tourism Video Background</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 100vh; /* Full viewport height */
+            overflow: hidden;
+        }
+
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover the entire area */
+            z-index: -1; /* Send video behind other elements */
+        }
+
+        .search-bar {
+            position: absolute; /* Position relative to the container */
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust positioning */
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            padding: 15px;
+            border-radius: 30px; /* Rounded corners */
+            width: 80%; /* Full width with some margin */
+            max-width: 800px; /* Max width */
+            display: flex;
+            align-items: center;
+            z-index: 1; /* Bring the search bar above the video */
+        }
+
+        .search-bar select, .search-bar input {
+            border: none;
+            padding: 10px;
+            margin-right: 10px; /* Space between elements */
+            border-radius: 30px; /* Rounded corners */
+            flex: 1; /* Take up remaining space */
+        }
+
+        .search-bar button {
+            border: none;
+            padding: 10px 15px;
+            background-color: #007BFF; /* Button color */
+            color: white;
+            border-radius: 30px; /* Rounded corners */
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+
+        .content {
+            padding: 20px;
+            z-index: 0; /* Keep content below the search bar */
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .column {
+            flex: 1;
+            min-width: 150px; /* Minimum width for responsiveness */
+            margin: 10px;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <video autoplay loop muted class="background-video">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"> <!-- Replace with your tourism video URL -->
+            Your browser does not support the video tag.
+        </video>
+        
+        <div class="search-bar">
+            <select>
+                <option value="">Where to?</option>
+                <option value="delhi">Delhi</option>
+                <option value="goa">Goa</option>
+                <option value="jaipur">Jaipur</option>
+                <option value="kerala">Kerala</option>
+                <option value="mumbai">Mumbai</option>
+            </select>
+            <select>
+                <option value="">Travel Type</option>
+                <option value="adventure">Adventure</option>
+                <option value="family">Family</option>
+                <option value="romantic">Romantic</option>
+                <option value="solo">Solo</option>
+            </select>
+            <input type="text" placeholder="Search your destination..." />
+            <button type="button">Find Now</button>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <p><i class="fa fa-user"></i></p>
+                    <h3>11+</h3>
+                    <p>Partners</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <p><i class="fa fa-check"></i></p>
+                    <h3>55+</h3>
+                    <p>Projects</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <p><i class="fa fa-smile-o"></i></p>
+                    <h3>100+</h3>
+                    <p>Happy Clients</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <p><i class="fa fa-coffee"></i></p>
+                    <h3>100+</h3>
+                    <p>Meetings</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

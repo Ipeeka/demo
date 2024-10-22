@@ -1,0 +1,26 @@
+.rating-summary {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .average-rating {
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  .reviews {
+    margin-bottom: 20px;
+  }
+  
+  .review-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
+  }
+  
+  .review-form {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+  }
+  

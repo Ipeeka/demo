@@ -1,0 +1,223 @@
+<div *ngIf="!showPaymentForm && !isPaymentSuccessful">
+  <h2>Book Your Trip</h2>
+  <form (ngSubmit)="proceedToPayment()">
+    <label for="name">Full Name:</label>
+    <input
+      type="text"
+      id="name"
+      [(ngModel)]="bookingDetails.name"
+      name="name"
+      required
+    />
+
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      [(ngModel)]="bookingDetails.email"
+      name="email"
+      required
+    />
+
+    <label for="destination">Destination:</label>
+    <input
+      type="text"
+      id="destination"
+      [(ngModel)]="bookingDetails.destination"
+      name="destination"
+      required
+    />
+
+    <label for="checkin">Check-in Date:</label>
+    <input
+      type="date"
+      id="checkin"
+      [(ngModel)]="bookingDetails.checkin"
+      name="checkin"
+      required
+    />
+
+    <label for="checkout">Check-out Date:</label>
+    <input
+      type="date"
+      id="checkout"
+      [(ngModel)]="bookingDetails.checkout"
+      name="checkout"
+      required
+    />
+
+    <label for="guests">Number of Guests:</label>
+    <input
+      type="number"
+      id="guests"
+      [(ngModel)]="bookingDetails.guests"
+      name="guests"
+      min="1"
+      required
+    />
+
+    <label for="package">Package:</label>
+    <select
+      id="package"
+      [(ngModel)]="bookingDetails.package"
+      name="package"
+      required
+    >
+      <option value="">Select a package</option>
+      <option value="basic">Basic Package</option>
+      <option value="premium">Premium Package</option>
+      <option value="luxury">Luxury Package</option>
+    </select>
+
+    <div class="health-issues">
+      <label>Do you have health issues?</label>
+      <label>
+        <input
+          type="radio"
+          [(ngModel)]="bookingDetails.healthIssues"
+          value="yes"
+          name="health-issues"
+          required
+        />
+        Yes
+      </label>
+      <label>
+        <input
+          type="radio"
+          [(ngModel)]="bookingDetails.healthIssues"
+          value="no"
+          name="health-issues"
+          required
+        />
+        No
+      </label>
+    </div>
+
+    <button type="submit">Proceed to Payment</button>
+  </form>
+</div>
+
+<div *ngIf="showPaymentForm" class="payment-details">
+  <h2>Payment Details</h2>
+
+  <form *ngIf="!showOtpForm && !isLoading" (ngSubmit)="continuePayment()">
+    <h3>Choose Payment Method</h3>
+
+    <div class="payment-methods">
+      <button
+        class="button-56"
+        type="button"
+        (click)="selectPaymentMethod('card')"
+        [class.active]="paymentMethod === 'card'"
+      >
+        Card
+      </button>
+      <span class="divider"> / </span>
+      <button
+        class="button-56"
+        type="button"
+        (click)="selectPaymentMethod('bank')"
+        [class.active]="paymentMethod === 'bank'"
+      >
+        Bank Account
+      </button>
+    </div>
+
+    <div *ngIf="paymentMethod === 'card'">
+      <h3>Card Payment</h3>
+      <label for="card-number">Card Number:</label>
+      <input
+        type="text"
+        id="card-number"
+        [(ngModel)]="bookingDetails.cardNumber"
+        name="card-number"
+        required
+      />
+
+      <label for="expiry-date">Expiry Date:</label>
+      <input
+        type="text"
+        id="expiry-date"
+        [(ngModel)]="bookingDetails.expiryDate"
+        name="expiry-date"
+        required
+        placeholder="MM/YY"
+      />
+
+      <label for="cvv">CVV:</label>
+      <input
+        type="text"
+        id="cvv"
+        [(ngModel)]="bookingDetails.cvv"
+        name="cvv"
+        required
+      />
+
+      <label for="cardholder-name">Cardholder Name:</label>
+      <input
+        type="text"
+        id="cardholder-name"
+        [(ngModel)]="bookingDetails.cardholderName"
+        name="cardholder-name"
+        required
+      />
+    </div>
+
+    <div *ngIf="paymentMethod === 'bank'">
+      <h3>Bank Account Payment</h3>
+      <label for="account-number">Account Number:</label>
+      <input
+        type="text"
+        id="account-number"
+        [(ngModel)]="bookingDetails.accountNumber"
+        name="account-number"
+        required
+      />
+
+      <label for="routing-number">Routing Number:</label>
+      <input
+        type="text"
+        id="routing-number"
+        [(ngModel)]="bookingDetails.routingNumber"
+        name="routing-number"
+        required
+      />
+    </div>
+
+    <button type="submit" class="button-56">Continue Payment</button>
+  </form>
+
+  <div *ngIf="showOtpForm && !isLoading" class="otp-form">
+    <form (ngSubmit)="confirmPayment()">
+      <label for="otp">OTP:</label>
+      <input type="text" id="otp" [(ngModel)]="otp" name="otp" required />
+
+      <div class="timer">
+        <span *ngIf="timer > 0">{{ timer }} seconds remaining</span>
+        <button *ngIf="timer <= 0" (click)="resendOtp()" class="button info">
+          Resend OTP
+        </button>
+      </div>
+
+      <button type="submit" class="button-56">Confirm Payment</button>
+    </form>
+  </div>
+
+  <div *ngIf="isLoading" class="loading">
+    <h3>Processing Payment...</h3>
+    <div class="spinner"></div>
+  </div>
+</div>
+
+<!-- Modal for Success Message -->
+<div
+  id="myModal"
+  class="modal"
+  [ngStyle]="{ display: isPaymentSuccessful ? 'block' : 'none' }"
+>
+  <div class="modal-content">
+    <span class="close" (click)="isPaymentSuccessful = false">&times;</span>
+    <h2>Payment Successful!</h2>
+    <p>Your payment has been processed successfully.</p>
+  </div>
+</div>

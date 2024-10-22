@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Travel Blog - Your Travel Agency</title>
+    <link rel="stylesheet" href="blogs.component.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>What our Customer Say's</h1>
+        <p>Share your travel stories, tips, and experiences with our community!</p>
+    </header>
+
+    <section id="blog-posts">
+        <article class="blog-post">
+            <h2>Exploring Bali: A Guide to the Best Beaches</h2>
+            <p><strong>Posted by:</strong> Jane Doe on September 30, 2024</p>
+            <img src="images/bali-blog.jpg" alt="Bali Beach" class="blog-image">
+            <p>Bali is known for its stunning beaches and vibrant culture. In this post, I'll share my experiences exploring the best beaches to visit...</p>
+            <a href="#" class="read-more">Read More</a>
+
+            <div class="comments-section">
+                <h3>Comments</h3>
+                <div class="comment">
+                    <p><strong>John Smith:</strong> Great tips! I can't wait to visit!</p>
+                </div>
+                <div class="comment">
+                    <p><strong>Mary Johnson:</strong> I loved Bali! Thanks for sharing!</p>
+                </div>
+                <form class="comment-form">
+                    <textarea placeholder="Add a comment..." required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </article>
+
+        <article class="blog-post">
+            <h2>Top 5 Destinations for Solo Travelers</h2>
+            <p><strong>Posted by:</strong> Alex Lee on September 25, 2024</p>
+            <img src="images/solo-travel.jpg" alt="Solo Travel" class="blog-image">
+            <p>Traveling alone can be a rewarding experience. Here are my top 5 destinations that are perfect for solo adventurers...</p>
+            <a href="#" class="read-more">Read More</a>
+
+            <div class="comments-section">
+                <h3>Comments</h3>
+                <div class="comment">
+                    <p><strong>Sarah Brown:</strong> I've been to all these places. They are amazing!</p>
+                </div>
+                <form class="comment-form">
+                    <textarea placeholder="Add a comment..." required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </article>
+
+        <!-- More customer blog posts can be added here -->
+    </section>
+
+    <section id="new-blog">
+        <h2>Share Your Travel Story</h2>
+        <form id="new-blog-form">
+            <label for="blog-title">Title:</label>
+            <input type="text" id="blog-title" name="blog-title" required>
+
+            <label for="blog-content">Content:</label>
+            <textarea id="blog-content" name="blog-content" rows="5" required></textarea>
+
+            <label for="author-name">Your Name:</label>
+            <input type="text" id="author-name" name="author-name" required>
+
+            <button type="submit">Publish Your Story</button>
+        </form>
+    </section>
+
+    
+</body>
+</html>

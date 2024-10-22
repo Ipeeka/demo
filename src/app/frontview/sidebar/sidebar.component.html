@@ -1,0 +1,21 @@
+<aside class="sidebar">
+    <nav>
+        <ul>
+            <li><a routerLink="booknow">Book Now</a></li>
+            <li><a routerLink="/page1">Gallery</a></li>
+            <!-- <li><a routerLink="guides">Travel Guides</a></li> -->
+            <li>
+                <div class="dropdown-container">
+                    <a href="#" class="dropdown-toggle" (click)="toggleDropdown()">Services</a>
+                    <ul class="dropdown" [style.display]="isDropdownOpen ? 'block' : 'none'">
+                        <li><a routerLink="service1">Service 1</a></li>
+                        <li><a routerLink="service2">Service 2</a></li>
+                        <li><a routerLink="service3">Service 3</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="/student">Help</a></li>
+            <li><a routerLink="ratings">Our Ratings</a></li>
+        </ul>
+    </nav>
+</aside>

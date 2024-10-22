@@ -1,0 +1,41 @@
+<div class="rating-summary">
+    <h1>Share Your Experience</h1>
+    <div class="average-rating">
+      <h2>Average Rating: {{ averageRating }} / 5</h2>
+      <p>Total Reviews: {{ totalReviews }}</p>
+    </div>
+  </div>
+  
+  <div class="reviews">
+    <h3>User Reviews</h3>
+    <div *ngFor="let review of reviews" class="review-card">
+      <h4>{{ review.username }} ({{ review.rating }} ★)</h4>
+      <p>{{ review.text }}</p>
+      <small>{{ review.date }}</small>
+    </div>
+  </div>
+  
+  <div class="review-form">
+    <h3>Write a Review</h3>
+    <form (ngSubmit)="submitReview()">
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput [(ngModel)]="newReview.username" name="username" required>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Rating</mat-label>
+        <mat-select [(ngModel)]="newReview.rating" name="rating" required>
+          <mat-option *ngFor="let star of [1, 2, 3, 4, 5]" [value]="star">{{ star }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Review</mat-label>
+        <textarea matInput [(ngModel)]="newReview.text" name="text" required></textarea>
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit">Submit Review</button>
+    </form>
+  </div>
+  

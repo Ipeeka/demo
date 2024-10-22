@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.login-container {
+  max-width: 500px;
+  margin: 100px auto; /* Increased margin for more spacing */
+  padding: 40px; /* More padding for larger content */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Default shadow */
+  transition: box-shadow 0.3s ease;
+}
+
+.login-container:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px; /* Increased margin for better spacing */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Increased margin for better spacing */
+}
+
+label {
+  display: block;
+  margin-bottom: 10px; /* Increased margin for better spacing */
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px; /* Increased padding for larger input */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px; /* Larger font size */
+}
+
+.btn {
+  width: 100%;
+  padding: 15px; /* Increased padding for larger button */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px; /* Larger font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+p {
+  text-align: center;
+  margin-top: 20px; /* Increased margin for better spacing */
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

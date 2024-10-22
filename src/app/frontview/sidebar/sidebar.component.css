@@ -1,0 +1,59 @@
+.sidebar {
+    position: fixed; /* Fix the sidebar */
+    top: 60px; /* Position it below the icon bar */
+    bottom: 0; /* Allow it to stretch to the bottom */
+    width: 200px; /* Reduced width for sidebar */
+    background-color: #f4f4f4; /* Light background color */
+    padding: 20px;
+    border-right: 1px solid #ddd; /* Optional: add a border */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+.sidebar ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.sidebar li {
+    margin: 10px 0; /* Space between items */
+    position: relative; /* Position for dropdown */
+}
+
+.sidebar a {
+    display: block; /* Make links block elements */
+    padding: 10px 20px; /* Padding for button effect */
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Text color */
+    border-radius: 20px; /* Rounded corners for capsule design */
+    background: #f9f9f9; /* Light background */
+    transition: background 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.sidebar a:hover {
+    background: linear-gradient(90deg, #007BFF 50%, #0056b3 50%); /* Gradient hover effect */
+    color: white; /* Change text color on hover */
+}
+
+.dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position it relative to the parent */
+    left: 0; /* Align with the left of the parent */
+    top: 100%; /* Position below the parent */
+    background: #e0bebe; /* Light background */
+    width: 100%; /* Full width */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.dropdown a {
+    padding: 10px 20px; /* Padding for dropdown links */
+    color: #333; /* Default text color */
+    background: #e7e7e7; /* Light background for dropdown items */
+    transition: background 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.dropdown a:hover {
+    background: #007BFF; /* Change background color on hover */
+    color: white; /* Change text color on hover */
+}
